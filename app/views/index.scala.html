@@ -1,7 +1,20 @@
-@(message: String)
-
-@main("Welcome to Play 2.1") {
-    
-    @play20.welcome(message, style = "Java")
-    
+@main("iWant2Exchange - Beta") {
+<div class="jumbotron">
+    <h1>iWant2Exchange</h1>
+    <p class="lead">The single best currency converter around.</p>
+    <form class="form form-inline">
+        <input name="amount">
+        <select name="from" class="input-small">
+            <option>EUR</option>
+            <option>USD</option>
+            <option>YEN</option>
+        </select>
+        <select name="to" class="input-small">
+            <option>EUR</option>
+            <option>USD</option>
+            <option>YEN</option>
+        </select>
+        <a class="btn btn-success" href="#">Convert</a>
+    </form>
+</div>
 }

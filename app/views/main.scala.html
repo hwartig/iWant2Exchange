@@ -7,9 +7,48 @@
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <style type="text/css">
+            body {
+            padding-top: 20px;
+            padding-bottom: 40px;
+            }
+
+            /* Custom container */
+            .container-narrow {
+            margin: 0 auto;
+            max-width: 700px;
+            }
+            .container-narrow > hr {
+            margin: 30px 0;
+            }
+
+            .jumbotron {
+            margin: 60px 0;
+            text-align: center;
+            }
+            .jumbotron h1 {
+            font-size: 72px;
+            line-height: 1;
+            }
+            .jumbotron .btn {
+            font-size: 21px;
+            padding: 14px 24px;
+            }
+            .footer {
+            text-align: center;
+            }
+        </style>
     </head>
     <body>
-        @content
+        <div class="container-narrow">
+            @content
+            <hr>
+            <div class="footer">
+                <p>from Munich with love - © iWant2 2013</p>
+            </div>
+        </div>
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
     </body>
 </html>
