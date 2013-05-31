@@ -1,20 +1,33 @@
+@(from:java.util.Currency, amount:java.math.BigDecimal, to:java.util.Currency, result:java.math.BigDecimal)
+@import java.util.Locale
+
+@import helper._
+
 @main("iWant2Exchange - Beta") {
 <div class="jumbotron">
     <h1>iWant2Exchange</h1>
     <p class="lead">The single best currency converter around.</p>
-    <form class="form form-inline">
-        <input name="amount">
+
+    @if(result!=null) {
+    <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        @from.getSymbol @amount  are @to.getSymbol @result
+    </div>
+    }
+    @form(action = routes.Application.index(), 'class -> "form form-inline") {
+        <input name="amount" value="@amount">
         <select name="from" class="input-small">
             <option>EUR</option>
             <option>USD</option>
-            <option>YEN</option>
+            <option>JPY</option>
         </select>
+        to
         <select name="to" class="input-small">
             <option>EUR</option>
             <option>USD</option>
-            <option>YEN</option>
+            <option>JPY</option>
         </select>
-        <a class="btn btn-success" href="#">Convert</a>
-    </form>
+        <button type="submit" class="btn btn-success">Convert</button>
+    }
 </div>
 }
